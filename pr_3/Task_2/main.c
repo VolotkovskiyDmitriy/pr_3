@@ -30,7 +30,13 @@ double averageValue(int *arr, int size){
   for (i = 0; i < size; i++){
     sum += arr[i];
   }
-  return sum / size;
+  sum = sum / size;
+  int count = 0;
+  for(i = 0; i < size; i++){
+    if ((double)arr[i] > sum) count++;
+  }
+  printf("Count of elements which is bigger the average = %d\n", count);
+  return sum;
 }
 
 int sumAfterNegative(int *arr, int size){
